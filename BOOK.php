@@ -57,8 +57,8 @@
   </div>
 
 </body>
+
+</html>
 <?php 
 include 'Main_Nav.php';
 ?>
-
-</html>
