@@ -1,8 +1,40 @@
 <?php 
-    include 'Admin.php'; 
-   ?>
-<html lang="en">
+session_start();  
+include 'Admin.php'; 
+    include 'conn.php';
+if(isset($_POST['submit']))
+{
+    $image=$_FILES['image']['name'];
+    $tmp=$_FILES['image']['tmp_name'];
+    $text=$_POST['text'];
+                      print "<script>alert ('$image') </script>";
 
+    
+    if(empty($text))
+    {
+        echo 'Please enter name of album';
+    }
+    else
+    {
+    $insert="INSERT INTO `album`(`AlbumName`, `Image`) VALUES ('$text','$image')";
+               
+            if(mysqli_query($conn,$insert))
+              {
+                  print "<script>alert ('Album Added') </script>";
+               
+              }
+           else
+               {
+              print "<script>alert ('Error,please try later') </script>";
+                
+        }
+    
+        
+    }
+}
+    
+ ?>
+<html lang="en">
 <head>
     <link rel="stylesheet" href="addAlbums.css">
 
@@ -21,37 +53,33 @@
 <body>
 
 
-    <div class="drag-area">
+    
+    
+    <form method="post" action="addAlbums.php" enctype="multipart/form-data">
+    
+        <div class="drag-area">
         <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
         <header>Drag & Drop to Upload File</header>
         <span>OR</span>
         <button> Upload file </button>
-        <input type="file" hidden>
+        <input type="file" name="image" value="image" hidden>
     </div>
 
-    <div class="custom-select" style="width:300px;">
+        
+        
 
-        <select>
-            <option value="0">Select Type:</option>
-            <option value="1">Wedding</option>
-            <option value="2">Engagment</option>
-            <option value="3">Birthday</option>
-            <option value="4">Graduation</option>
-            <option value="5">Casual</option>
-            <option value="6">Other</option>
-        </select>
-    </div>
-
-    <form class="type">
+        
+        <div class="type">
+        
         <label for="name"> Enter Image name: </label> <br><br>
-        <input class="label" type="text" id="name" name="name">
-    </form>
-
-    <form>
+        <input class="label" type="text" id="text" name="text">
+        </div>
+    
     <h1 class="add "> Add Albums </h1>
         <br> <br> <br> <br>
-        <button class="next" ><a href="addGallery.php"> Next </a></button>
+         <input type="submit" name="submit" value="submit" class="next">
     </form>
+
 
     <script>
     //selecting all required elements
@@ -198,5 +226,4 @@
     </script>
 
 </body>
-
 </html>

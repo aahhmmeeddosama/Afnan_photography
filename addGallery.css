@@ -3,7 +3,178 @@
 body{
 align-items: right;
   justify-content: center;
+  background: #fff;@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+body{
+align-items: right;
+  justify-content: center;
   background: #fff;
+}
+
+/*drag drop area*/
+.drag-area{
+  position:fixed;
+  left: 350px;
+  padding: 15px 15px;
+  margin-top: 150px;
+  border: 2px dashed #00539C;
+  height: 250px;
+  width: 500px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.drag-area.active{
+  border: 2px solid #fff;
+}
+/*icon color and size*/
+.drag-area .icon{
+  font-size: 100px;
+  color: 00539C;
+}
+
+/* Drag & Drop to Upload File text*/
+.drag-area header{
+  padding: 0px;
+  text-align:center;
+  font-size: 30px;
+  font-weight: 500;
+  color: #fff;
+}
+.drag-area span{
+  font-size: 25px;
+  font-weight: 100;
+  color: #fff;
+  margin: 10px 0 15px 0;
+}
+.drag-area button { /*upload file button*/
+    padding: 10px 10px;
+  font-size: 20px;
+  font-weight: 500;
+  background: #00539C;
+  color: white;
+  border-radius: 1px;
+  cursor: pointer;
+}
+
+.drag-area img{
+  height: 50%;
+  width: 50%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+  
+.custom-select {
+    position: fixed;
+    left: 950px;
+    margin-top: 300px;
+}
+
+.type{
+    position: fixed;
+    left:  950px;
+    margin-top: 200px;
+    font-size: 20px;
+}
+
+.custom-select select {
+    display: none;
+}
+
+.select-selected {
+    background-color: #00539C;
+}
+
+/*style the arrow inside the select element:*/
+.select-selected:after {
+    position: absolute;
+    content: "";
+    top: 14px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-color: #fff transparent transparent transparent;
+}
+
+/*point the arrow upwards when the select box is open (active):*/
+.select-selected.select-arrow-active:after {
+    border-color: transparent transparent #fff transparent;
+    top: 7px;
+}
+
+/*style the items (options), including the selected item:*/
+.select-items div,
+.select-selected {
+    color: #ffffff;
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+    cursor: pointer;
+    user-select: none;
+}
+
+/*style items (options):*/
+.select-items {
+    position: absolute;
+    background-color: #00539C;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+}
+
+/*hide the items when the select box is closed:*/
+.select-hide {
+    display: none;
+}
+
+.select-items div:hover,
+.same-as-selected {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.label {
+    padding: 8px;
+    width: 300px;
+  }
+
+ a { 
+    color: white; 
+   }
+
+ .next{
+    position: fixed;
+    left: 1200px;
+    margin-top: 300px;
+    padding: 10px 10px;
+    font-size: 20px;
+    font-weight: 500;
+    background: #00539C;
+    color: white;
+    border-radius: 1px;
+    cursor: pointer;
+ } 
+ .back{
+    position: fixed;
+    left: 1100px;
+    margin-top: 300px;
+    padding: 10px 10px;
+    font-size: 20px;
+    font-weight: 500;
+    background: #00539C;
+    color: white;
+    border-radius: 1px;
+    cursor: pointer;
+ }
+ .add{
+     color: black;
+     position: fixed;
+     font-style: oblique;
+     left:800px;
+ }
 }
 
 /*drag drop area*/

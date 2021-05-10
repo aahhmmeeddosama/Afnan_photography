@@ -7,12 +7,12 @@
 </head>
 <body>
 <header>
-	<img src="LL.png" alt="Afnan Logo" id="icon2">
+	<img src="Images/LL.png" alt="Afnan Logo" id="icon2">
 	<nav>	
 		<li><a href='The_Main.php'><i class="fas fa-home"></i>Home</a></li>
 		<li><a href='About Us.php'><i class="fas fa-info-circle"></i>About us</a></li>
-		<li><a href='Gallery code/ALBUM.php'><i class="fas fa-images"></i>Albums</a></li>
-		<li><a href='BookingTable.php'><i class="fas fa-table"></i>Book Now</a></li>
+		<li><a href='ALBUM.php'><i class="fas fa-images"></i>Albums</a></li>
+		<li><a href='Pack.php'><i class="fas fa-table"></i>Book Now</a></li>
 		<img src="Images/moon.png" alt="moon" id="icon">
 	</nav>
 </header>

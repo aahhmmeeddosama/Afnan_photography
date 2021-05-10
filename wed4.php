@@ -47,13 +47,13 @@ body {
 
 <body>
     <div class="container">
-        <img onmouseover="preview.src=img1.src" name="img1" src="11w4.jpg" alt="" />
-        <img onmouseover="preview.src=img2.src" name="img2" src="22w4.jpg" alt="" />
-        <img onmouseover="preview.src=img3.src" name="img3" src="33w4.jpg" alt="" />
-        <img onmouseover="preview.src=img4.src" name="img4" src="44w4.jpg" alt="" />
-        <img onmouseover="preview.src=img5.src" name="img5" src="55w4.jpg" alt="" />
-        <img onmouseover="preview.src=img6.src" name="img6" src="66w4.jpg" alt="" />
-        <img onmouseover="preview.src=img7.src" name="img7" src="77w4.jpg" alt="" />
+        <img onmouseover="preview.src=img1.src" name="img1" src="imagesGallery/11w4.jpg" alt="" />
+        <img onmouseover="preview.src=img2.src" name="img2" src="imagesGallery/22w4.jpg" alt="" />
+        <img onmouseover="preview.src=img3.src" name="img3" src="imagesGallery/33w4.jpg" alt="" />
+        <img onmouseover="preview.src=img4.src" name="img4" src="imagesGallery/44w4.jpg" alt="" />
+        <img onmouseover="preview.src=img5.src" name="img5" src="imagesGallery/55w4.jpg" alt="" />
+        <img onmouseover="preview.src=img6.src" name="img6" src="imagesGallery/66w4.jpg" alt="" />
+        <img onmouseover="preview.src=img7.src" name="img7" src="imagesGallery/77w4.jpg" alt="" />
     </div>
 </body>
 

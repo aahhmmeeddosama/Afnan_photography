@@ -1,11 +1,11 @@
 <?php
+include 'conn.php';
+include "Admin.php"; 
 
           session_start();
     
 
 $Test['id']=2;
-include 'conn.php';
-include "Admin.php"; 
   
 $sql = "SELECT * FROM Admin WHERE ID =1";
       $result = mysqli_query($conn, $sql);
@@ -33,11 +33,11 @@ $sql = "SELECT * FROM Admin WHERE ID =1";
       <h1 style = 'color:red'>View Profle123</h1>
       
         <div class="profile" style = 'height: 620px;margin-right:250px; margin-top: 20px;'>
-  	
+    
           <form action="View Profile.php" method="post" enctype="multipart/form-data">
 
     <?php print "<img src = 'Adminsphotos/$Profilepicture' style = ' width: 200px; height: 200px; margin-right: 485px; padding-top: 0px;  margin-buttom:200px;'>"?>;
-		<input type = "file" name = "upload"   >
+    <input type = "file" name = "upload"   >
      
               
        
@@ -58,8 +58,8 @@ $sql = "SELECT * FROM Admin WHERE ID =1";
 
        </form>
         <center>
-			<?php
-			
+      <?php
+      
                   if(isset($_POST['Edit']))
       {
               
@@ -72,11 +72,11 @@ $sql = "SELECT * FROM Admin WHERE ID =1";
 
            if(preg_match("^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$^", $FirstName1) == 0){
         $_SESSION['errmsg'] = "First Name should be characters only!"; 
-	   
+     
       }
       if(preg_match("^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$^", $LastName1) == 0){
         $_SESSION['errmsg'] = "Last Name should be characters only!"; 
-	   
+     
       }
       $e = filter_var($_POST['Eml'],FILTER_SANITIZE_EMAIL);
         if(!filter_var($e,FILTER_VALIDATE_EMAIL))
@@ -84,23 +84,27 @@ $sql = "SELECT * FROM Admin WHERE ID =1";
            $_SESSION['errmsg'] = "Not a valid email address!"; 
         }
             
-            if(isset($_SESSION['msg'])){
-					
-                 $editQuery = "UPDATE `Admin` SET `First_Name` = '$FirstName1', `Last_Name` = '$LastName1', `Email` = '$Email1',`Password`='$Password1', WHERE `ID` = 1";
+          if(!isset($_SESSION['errmsg'])){
+          
+                 
+                $editQuery = "UPDATE `admin` SET `First_Name` = '$FirstName1', `Last_Name` = '$LastName1', `Email` = '$Email1',`Password`='$Password1' WHERE `ID` = 1";
           mysqli_query($conn,$editQuery);      
-          $_SESSION['msg'] = "Edited successful. You may login now!"; 
-                
-                echo $_SESSION['msg'];
-					unset($_SESSION['msg']);
-				}
+                $_SESSION['msg'] = "Edited successful. You may login now!"; 
+        }       
+              if(!isset($_SESSION['errmsg'])){
+          echo $_SESSION['msg'];
+          unset($_SESSION['msg']);
+                header('location: View Profile.php');
+  
+              }
                 else if(isset($_SESSION['errmsg'])){
                     echo $_SESSION['errmsg'];
-					unset($_SESSION['errmsg']);
+          unset($_SESSION['errmsg']);
                 }
                   }
-			?>
-			</center>
-	</div>
+      ?>
+      </center>
+  </div>
   </body>
 </html>
 

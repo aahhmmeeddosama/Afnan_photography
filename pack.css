@@ -2,14 +2,83 @@
   padding: 0px;
   margin: 0px;
 }
-.pack{  
+:root{
+  --primary-color:white;
+  --secondary-color:black;
+  --third-color:#00539C;
+  --fourth-color:white;
+}
+.dark-theme{
+  --primary-color:black;
+   --secondary-color:white;
+}
+
+.move p{
+    position: absolute;
+    top:150px;
+    right: 950px;
+    margin-left: 100px;
+    font-size:24px;
+    color: var(--secondary-color);
+}
+
+/*.type{
+    position: fixed; 
+    top:150px;
+    left:  950px;
+    margin-top: 200px;
+    font-size: 20px;
+}*/
+.type1 select{
+          position: absolute;
+          font-size:20px;
+          margin-left: 300px;
+          margin-top: 10px;
+          color:rgb(133, 146, 158);
+          background-color:transparent; 
+          border-radius:25px;
+        }
+
+.type1 select:hover{
+          color:darkred;
+        }
+.type select{
+          margin-left: 850px;
+          font-size:20px;
+          margin-top: -60px;
+          color:rgb(133, 146, 158);
+          background-color:transparent; 
+          border-radius:25px;
+        }
+
+.type select:hover{
+          color:darkred;
+        }
+        form input{
+          border-radius: 25px;
+          width: 200px;
+          font-size: 24px;
+          margin-left: 350px;
+          background:  var(--fourth-color);
+          color:var(--third-color); 
+        }
+        form input:hover{
+          background: var(--third-color) ;
+          color:var(--fourth-color); 
+        }
+
+body{
+  background: var(--primary-color);
+}
+.pack{
   justify-content: center;
   align-items: center;
   display: inline-block;
   padding: 100px;
   width: auto;
   height:auto;
-  padding-bottom: 20px;
+  padding-bottom: 5px;
+  padding-top:20px; 
 }
 /*Setting the image sizes*/
 .pack img{
@@ -36,14 +105,14 @@ not on in every line*/
   margin-top: 540px;
 }
 .title h2{
-  background: #FFFFFF;
+  background: var(--primary-color);
   border-color: red;
   border:solid 5 5 5px;
   width: 350px;
   text-align: center;
   text-shadow: -3px 3px 4px #9398F0 ;
   line-height: 2.2;
-
+  color:var(--secondary-color);
   height: 150px;
   border-radius: 100%;
   font-size: 60px;
@@ -130,7 +199,7 @@ not on in every line*/
   display: inline-block;
   border-left: 205px solid transparent;
   border-right: 205px solid transparent;
-  border-bottom: 80px solid #fff;
+  border-bottom: 80px solid var(--primary-color);
   margin-top:30px;
 
 }

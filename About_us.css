@@ -5,12 +5,13 @@
         
         }
         :root{
-          --first-color:#00539C;
+            
+          --first-color:#0066BF;
           --secondary-color:black;
           --thirdary-color:blue;
         } 
         .dark-theme{
-          --first-color:#D1BCB2;
+          --first-color:#00539C;
           --secondary-color:white;
           --thirdary-color:green;
         }       
@@ -79,7 +80,7 @@
         .name{
             display: block;
             margin-top: 30px;
-            font-size: 26px; 
-            color:red;
+            font-size: 30px; 
+            color:var(--secondary-color);
             text-align: center;
         }

@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title> Engagement 3</title>
+    <title> Wedding 3 </title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <style>
@@ -28,7 +28,7 @@ body {
 }
 
 .container img {
-    max-width: 500px;
+    max-width: 300px;
     transform-origin: center;
     transform: perspective(800px) rotateY(30deg);
     transition: .10s;
@@ -47,15 +47,11 @@ body {
 
 <body>
     <div class="container">
-        <img onmouseover="preview.src=img1.src" name="img1" src="1e3.jpg" alt="" />
-        <img onmouseover="preview.src=img2.src" name="img2" src="2e3.jpg" alt="" />
-        <img onmouseover="preview.src=img3.src" name="img3" src="3e3.jpg" alt="" />
-        <img onmouseover="preview.src=img4.src" name="img4" src="4e3.jpg" alt="" />
-        <img onmouseover="preview.src=img5.src" name="img5" src="5e3.jpg" alt="" />
-        <img onmouseover="preview.src=img6.src" name="img6" src="6e3.jpg" alt="" />
-        <img onmouseover="preview.src=img7.src" name="img7" src="7e3.jpg" alt="" />
-        <img onmouseover="preview.src=img8.src" name="img8" src="8e3.jpg" alt="" />
-        <img onmouseover="preview.src=img9.src" name="img9" src="9e3.jpg" alt="" />
+        <img onmouseover="preview.src=img1.src" name="img1" src="imagesGallery/1w3.jpg" alt="" />
+        <img onmouseover="preview.src=img2.src" name="img2" src="imagesGallery/2w3.jpg" alt="" />
+        <img onmouseover="preview.src=img3.src" name="img3" src="imagesGallery/3w3.jpg" alt="" />
+        <img onmouseover="preview.src=img4.src" name="img4" src="imagesGallery/4w3.jpg" alt="" />
+        <img onmouseover="preview.src=img5.src" name="img5" src="imagesGallery/5w3.jpg" alt="" />
     </div>
 </body>
 

@@ -1,11 +1,52 @@
 <?php 
     include 'Admin.php'; 
-   ?>
+       include 'conn.php';
+$ID="";
+if(isset($_POST['submit']))
+ {
+   
+          $image=$_FILES['image']['name'];
+          $tmp=$_FILES['image']['tmp_name'];    
+          $name=$_POST['name'];
+         
+    $i=$_POST['AName'];
+    $sql="SELECT ID FROM `album` where AlbumName='".$i."'";
+    $result=mysqli_query($conn,$sql);
+    if(mysqli_num_rows($result) > 0)
+         { 
+            while($row = mysqli_fetch_assoc($result))
+            {
+               $ID = $row['ID'];
+ 
+            }
+         }
+    
+    $Instertdata="INSERT INTO `gallery`(`ImageGallery`, `NameGallery`, `IDAlbum`) VALUES('$image','$name','$ID')";
+       if(mysqli_query($conn,$Instertdata))
+             {
+           
+        print "<script>alert ('Insetred') </script>";
+
+       }
+    
+    else
+        
+           {
+                       print "<script>alert (' not Insetred') </script>";
+
+           }
+    
+    
+    print "<script>alert ('ID'.$ID.) </script>";
+}
+
+
+?>
 <html lang="en">
 
 <head>
 
-    <title> add Gallerys </title>
+    <title> add Gallery </title>
     <link rel="stylesheet" href="addGallery.css">
 
 
@@ -20,41 +61,51 @@
 </head>
 
 <body>
-
-
+<form method="post" action="AddGallery.php" enctype="multipart/form-data">
+    
     <div class="drag-area">
         <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
         <header>Drag & Drop to Upload File</header>
 
         <button> Upload file </button>
-        <input type="file" hidden>
+        <input type="file" name="image" hidden>
     </div>
 
-    <div class="custom-select" style="width:300px;">
+    <?php
+  $sqlNat = "SELECT DISTINCT AlbumName FROM `album`";
+  $resultNat = mysqli_query($conn, $sqlNat);
+    // echo "<div class='type';><select name='type'>";
+  echo "<div class='custom-select' style=width:300px;><select name='AName'><br>";
 
-        <select>
-            <option value="0">Select Type:</option>
-            <option value="1">Wedding</option>
-            <option value="2">Engagment</option>
-            <option value="3">Birthday</option>
-            <option value="4">Graduation</option>
-            <option value="5">Casual</option>
-            <option value="6">Other</option>
-        </select>
-    </div>
+  while ($row = $resultNat->fetch_assoc()){
+    echo '<option value="'.$row["AlbumName"].'">'.$row["AlbumName"].'</option>';
+    echo $row['AlbumName']."<br>";
+}
+echo "</select>";
+        //<div class="custom-select" style="width:300px;">
 
-    <form class="type">
+    ?>
+   
+<div class="type">
         <label for="name"> Enter Image name: </label> <br><br>
         <input class="label" type="text" id="name" name="name">
 
-    </form>
-
-    <form>
+    </div>
+    
     <h1 class="add "> Add Gallerys </h1>
         <br> <br> <br> <br>
-        <button class="next"><a href="addImages.php"> Next </a></button>
 
-        <button class="back"><a href="addAlbums.php"> back </a></button>
+        <input type="submit" name="submit" value="submit"  class="next">
+    
+    </form>
+
+    
+    
+        
+    
+    
+
+    <form>
     </form>
 
     <script>
