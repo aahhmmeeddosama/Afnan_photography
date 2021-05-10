@@ -7,7 +7,7 @@
 </head>
 <body>
 <header>
-	<img src="Images/LL.png" alt="Afnan Logo" id="icon2">
+	<img src="LL.png" alt="Afnan Logo" id="icon2">
 	<nav>	
 		<li><a href='The_Main.php'><i class="fas fa-home"></i>Home</a></li>
 		<li><a href='About Us.php'><i class="fas fa-info-circle"></i>About us</a></li>
