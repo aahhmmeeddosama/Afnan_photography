@@ -1,76 +1,66 @@
-@import 'https://fonts.googleapis.com/css?family=Montserrat:300, 400, 700&display=swap';
-
-*{
-  margin:0;
-  padding:0;
-        /*font-family:sans:serif;*/
+  *{
+         margin:0;
+         padding:0;
+         font-family:sans:serif;
         
-  }        
-        
-:root{
-  --first-color:#DF853B;
-  --second-color:white;
-  --third-color:green;
-};  
-.dark-theme{
-  --first-color:black;
- --second-color:black;
-  --third-color:yellow;
-}
-.team-section
+        }
+        :root{
+          --first-color:#00539C;
+          --secondary-color:black;
+          --thirdary-color:blue;
+        } 
+        .dark-theme{
+          --first-color:#D1BCB2;
+          --secondary-color:white;
+          --thirdary-color:green;
+        }       
+        .team-section
         {
         overflow:hidden;
         text-align:center;
-        background:var(--first-color);
-        padding:60px
-            
+        padding:60px;
+        margin-top: 30px;    
         }
-    
-.team-section h1
+        .team-section h4
         {
-        text-transform:uppercase;
         margin-bottom:60px;
-        color:var(--second-color);
-        font-size:40px;    
-        }        
+        margin-left: 30px;
+        font-size: 22px;
+        color:var(--secondary-color);  
+        }   
+        .team-section h2
+        {
+          color:var(--first-color);  
+        }     
     
-.border
+        .border
         {
             display: block;
             margin: auto;
             width: 160px;
             height: 3px;
-             background: var(--third-color);
-            margin-bottom: 20px;      
-        }
-        .ps
-        {
             margin-bottom: 40px;
-            
+                
         }
-        
-        
         .ps a
         {
             display: inline-block;
             margin: 0 40px;
-            width: 160px;
-            height: 160px;
             overflow: hidden;
-            border-radius: 50%;
-            
         }
-        
         .ps a img
         {
-            width: 100px;
-            
+            width: 300px;
+            height: 400px;
+            border-radius: 10px;
             filter: grayscale(100%);
-            transition: 0.4s all;
         }
- .ps a:hover >img
+        .ps a:hover >img
         {
-           filter:none;   
+           filter:none;
+        }
+        .ps {
+          margin-bottom: -200px;
         }
         
         .section{
@@ -81,18 +71,15 @@
             text-align: justify;
             height: 0px;
             overflow: hidden;
+            margin-top: 200px;
         }
-        
         .section:target{
-            height: auto;
-            
+            height: auto;   
         }
-        
         .name{
             display: block;
-            margin-bottom: 30px;
-            text-transform: uppercase;
-            font-size: 22px;
-            
+            margin-top: 30px;
+            font-size: 26px; 
+            color:red;
+            text-align: center;
         }
-        
