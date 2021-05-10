@@ -99,3 +99,4 @@ if(isset($_POST['ahmed']))
 
 
 </html>
+<?php include "Main_Nav.php";error_reporting(E_ERROR | E_WARNING | E_PARSE);?>
