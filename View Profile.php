@@ -10,14 +10,16 @@ $Test['id']=2;
 $sql = "SELECT * FROM Admin WHERE ID =1";
       $result = mysqli_query($conn, $sql);
       while($row = mysqli_fetch_row($result)){
-      
+    
+
+
       $Username=$row[1];     
       $FirstName=$row[2];
       $LastName=$row[3];
       $Email=$row[4];
-      $Password=$row[5];
+      $Password=$row[6];
       $PhoneNumber=$row[6];
-      $Profilepicture=$row[7];
+      $Profilepicture=$row[6];
       }    
     ?>
 
