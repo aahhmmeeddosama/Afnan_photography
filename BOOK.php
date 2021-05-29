@@ -10,10 +10,10 @@ if(isset($_POST['ahmed']))
     $Comment=$_POST['Comment'];
     $time=$_POST['time'];
     $check=false;
-    
     if(preg_match("^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z])$^", $fn) == 0){
         print ($fn. " is not characters!"); 
    }
+
     
     else if(preg_match("^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z])$^", $ln) == 0){
         print ($ln. " is not characters!"); 
@@ -72,6 +72,7 @@ if(isset($_POST['ahmed']))
             <input type="text" placeholder="Enter session location" name="location">
 
           </div>
+
           <div class="input-box">
             <span class="details">Session Date</span>
             <input type="date" placeholder="YYYY--MM--DD" name="date" required>
