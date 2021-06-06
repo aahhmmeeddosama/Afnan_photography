@@ -1,43 +1,51 @@
 <?php
-include "conn.php";
-if(isset($_POST['ahmed']))
- {
-    $x=$_POST['date'];
-    $fn=$_POST['fn'];
-    $ln=$_POST['ln'];
-    $loc=$_POST['location'];
-    $phone=$_POST['mobile'];
-    $Comment=$_POST['Comment'];
-    $time=$_POST['time'];
-    $check=false;
-    if(preg_match("^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z])$^", $fn) == 0){
-        print ($fn. " is not characters!"); 
+/**
+ * 
+ */
+require_once('database_Connect.php');
+
+class UserValidation extends dbConnect
+{
+    public $x;
+    public $fn;
+    public $ln;
+    public $loc;
+    public $phone;
+    public $Comment;
+    public $time;
+    public $check=false;
+
+  function check_validation($fn,$ln,$phone,$loc)
+  {
+    $this->fn=$fn;
+    $this->ln=$ln;
+    $this->phone=$phone;
+    $this->loc=$loc;
+    if(preg_match("/^[a-zA-Z]$/", $fn) != 0){
+        print ($fn. "is not characters!"); 
    }
 
     
-    else if(preg_match("^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z])$^", $ln) == 0){
+    else if(preg_match("/^[a-zA-Z]$/", $ln) != 0){
         print ($ln. " is not characters!"); 
    }
-     else if(preg_match('@[0-9]@', $phone) == 0){
+     else if(preg_match("/^[1-9][0-9]{0,10}$/", $phone) != 0){
          print ($phone." is not numbers!!");
      }
-     else if(preg_match("^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z])$^", $loc) == 0){
+     else if(preg_match("/^[a-zA-Z]$/", $loc) != 0){
          print ($loc." is not characters!");
      }
-     else{
+    else{
+        $sql="INSERT INTO `booking`(`FirstName`, `LastName`, `City` , `Date`,`time`, `Comment`) VALUES('$fn','$ln', 'Ismailia' , '$x','$time','$Comment')";
 
-         $reserve="INSERT INTO `booking`(`FirstName`, `LastName`, `City` , `Date`,`time`, `Comment`) VALUES('$fn','$ln', 'Ismailia' , '$x','$time','$Comment')";
-         $putresult=mysqli_query($conn,$reserve);
-         if($putresult)
-         {
-           print "data inserted"; 
-         }  
-         else
-         {
-           print "data not inserted";
-         }   
+            $s=$this->connect()->prepare($sql);
+            //To avoid The sql injection
+            $s->execute([$fn]);
     }
+
+  }
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -101,3 +109,7 @@ if(isset($_POST['ahmed']))
 
 </html>
 <?php include "Main_Nav.php";error_reporting(E_ERROR | E_WARNING | E_PARSE);?>
+<?php
+$test= new UserValidation();
+$test->check_validation($_POST['fn'],$_POST['ln'],$_POST['phone'],$_POST['loc']);
+?>
